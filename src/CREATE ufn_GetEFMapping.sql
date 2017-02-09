@@ -10,15 +10,6 @@ RETURNS VARCHAR(MAX)
 
 BEGIN	
 
-	DECLARE @excludedColumns TABLE (
-		columnName VARCHAR(100)
-	)
-
-	INSERT INTO @excludedColumns (columnName) VALUES ('CreatedBy')
-	INSERT INTO @excludedColumns (columnName) VALUES ('CreatedOn')
-	INSERT INTO @excludedColumns (columnName) VALUES ('ModifiedBy')
-	INSERT INTO @excludedColumns (columnName) VALUES ('ModifiedOn')
-
 	DECLARE @code VARCHAR(MAX)
 	SET @code = 'public class ' + @entityName + 'Map : EntityTypeConfiguration<' +  @entityName + '>
 {
